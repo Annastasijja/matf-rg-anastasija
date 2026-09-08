@@ -8,6 +8,14 @@
       "sofa": {
         "path": "sofa/ready.obj",
         "flip_uvs": false
+      },
+      "platno": {
+        "path": "platno/model_obj.obj",
+        "flip_uvs": false
+      },
+      "table": {
+        "path": "table/dining_round_table.obj",
+        "flip_uvs": false
       }
     }
   },
