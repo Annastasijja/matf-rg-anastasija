@@ -22,6 +22,7 @@ public:
 
         // Ucitavamo prostoriju
         room = resources->model("cinema");
+        sofa = resources->model("sofa");
 
         // Ucitavamo shader
         shader = resources->shader("basic");
@@ -75,6 +76,27 @@ public:
         shader->set_mat4("model", model);
 
         room->draw(shader);
+
+        glm::mat4 sofa_model = glm::mat4(1.0f);
+
+        sofa_model = glm::translate(
+                sofa_model,
+                glm::vec3(-3.5f, 0.0f, 0.0f)
+                );
+
+        sofa_model = glm::rotate(
+                sofa_model,
+                glm::radians(180.0f),
+                glm::vec3(0.0f, 1.0f, 0.0f)
+                );
+
+        sofa_model = glm::scale(
+                sofa_model,
+                glm::vec3(0.05f)
+                );
+
+        shader->set_mat4("model", sofa_model);
+        sofa->draw(shader);
     }
 
     void end_draw() override {
@@ -88,6 +110,7 @@ public:
 
 private:
     engine::resources::Model *room{};
+    engine::resources::Model *sofa{};
     engine::resources::Shader *shader{};
 };
 

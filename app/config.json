@@ -4,6 +4,10 @@
       "cinema": {
         "path": "cinema.obj",
         "flip_uvs": false
+      },
+      "sofa": {
+        "path": "sofa/ready.obj",
+        "flip_uvs": false
       }
     }
   },
