@@ -16,6 +16,10 @@
       "table": {
         "path": "table/dining_round_table.obj",
         "flip_uvs": false
+      },
+      "projector": {
+        "path": "projector/slides.obj",
+        "flip_uvs": false
       }
     }
   },
