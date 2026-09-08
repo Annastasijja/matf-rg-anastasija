@@ -25,6 +25,7 @@ public:
         sofa = resources->model("sofa");
         platno = resources->model("platno");
         table = resources->model("table");
+        projector = resources->model("projector");
 
         // Ucitavamo shader
         shader = resources->shader("basic");
@@ -83,7 +84,7 @@ public:
 
         sofa_model = glm::translate(
                 sofa_model,
-                glm::vec3(-3.5f, 0.0f, 0.0f)
+                glm::vec3(-4.0f, 0.0f, 0.0f)
                 );
 
         sofa_model = glm::rotate(
@@ -135,6 +136,16 @@ public:
 
         shader->set_mat4("model", table_model);
         table->draw(shader);
+
+        glm::mat4 projector_model = glm::mat4(1.0f);
+
+        projector_model = glm::translate(
+                projector_model,
+                glm::vec3(-0.8f, 3.0f, -4.5f)
+                );
+
+        shader->set_mat4("model", projector_model);
+        projector->draw(shader);
     }
 
     void end_draw() override {
@@ -151,6 +162,7 @@ private:
     engine::resources::Model *sofa{};
     engine::resources::Model *platno{};
     engine::resources::Model *table{};
+    engine::resources::Model *projector{};
     engine::resources::Shader *shader{};
 };
 
