@@ -40,7 +40,7 @@ void main()
     {
         FragColor = vec4(0.9, 0.9, 0.9, 1.0);
     }
-    // Levi i desni zid - tamno sivi
+    // Levi i desni zid - tamnosivi
     else
     {
         FragColor = vec4(0.3, 0.3, 0.3, 1.0);
