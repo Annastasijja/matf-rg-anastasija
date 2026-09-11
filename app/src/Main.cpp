@@ -26,6 +26,7 @@ public:
         platno = resources->model("platno");
         table = resources->model("table");
         projector = resources->model("projector");
+        lamp = resources->model("lamp");
 
         // Ucitavamo shader
         shader = resources->shader("basic");
@@ -84,7 +85,7 @@ public:
 
         sofa_model = glm::translate(
                 sofa_model,
-                glm::vec3(-4.0f, 0.0f, 0.0f)
+                glm::vec3(-3.0f, 0.0f, 0.0f)
                 );
 
         sofa_model = glm::rotate(
@@ -105,23 +106,22 @@ public:
 
         platno_model = glm::translate(
                 platno_model,
-                glm::vec3(-12.0f, -47.0f, 15.0f)
+                glm::vec3(5.0f, 2.2f, 0.0f)
                 );
 
         platno_model = glm::rotate(
                 platno_model,
-                glm::radians(180.0f),
+                glm::radians(90.0f),
                 glm::vec3(0.0f, 1.0f, 0.0f)
                 );
 
         platno_model = glm::scale(
                 platno_model,
-                glm::vec3(0.05f)
+                glm::vec3(0.0015f)
                 );
 
         shader->set_mat4("model", platno_model);
         platno->draw(shader);
-
         glm::mat4 table_model = glm::mat4(1.0f);
 
         table_model = glm::translate(
@@ -146,6 +146,21 @@ public:
 
         shader->set_mat4("model", projector_model);
         projector->draw(shader);
+
+        glm::mat4 lamp_model = glm::mat4(1.0f);
+
+        lamp_model = glm::translate(
+                lamp_model,
+                glm::vec3(-3.0f, 0.0f, 2.5f)
+                );
+
+        lamp_model = glm::scale(
+                lamp_model,
+                glm::vec3(1.3f)
+                );
+
+        shader->set_mat4("model", lamp_model);
+        lamp->draw(shader);
     }
 
     void end_draw() override {
@@ -163,6 +178,7 @@ private:
     engine::resources::Model *platno{};
     engine::resources::Model *table{};
     engine::resources::Model *projector{};
+    engine::resources::Model *lamp{};
     engine::resources::Shader *shader{};
 };
 

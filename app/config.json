@@ -10,7 +10,7 @@
         "flip_uvs": false
       },
       "platno": {
-        "path": "platno/model_obj.obj",
+        "path": "platno/Screen.obj",
         "flip_uvs": false
       },
       "table": {
@@ -19,6 +19,10 @@
       },
       "projector": {
         "path": "projector/slides.obj",
+        "flip_uvs": false
+      },
+      "lamp": {
+        "path": "lamp/Lamp.obj",
         "flip_uvs": false
       }
     }
