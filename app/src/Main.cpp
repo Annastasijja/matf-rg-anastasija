@@ -1,8 +1,5 @@
-#include <engine/core/Engine.hpp>
+#include "CinemaApp.hpp"
 
-/**
- * Start here...
- */
-int main(int argc, char **argv) {
-    return 0;
-}
+#include <memory>
+
+int main(int argc, char **argv) { return std::make_unique<CinemaApp>()->run(argc, argv); }
