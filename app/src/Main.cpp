@@ -161,8 +161,7 @@ public:
                 graphics->camera()->view_matrix()
                 );
 
-        // Prostorija je vec napravljena u OBJ fajlu,
-        // zato nam je model matrica identitet.
+
         glm::mat4 model = glm::mat4(1.0f);
 
         shader->set_mat4("model", model);
@@ -237,7 +236,7 @@ public:
 
         shader->set_mat4("model", table_model);
 
-        // Sto koristi svoju albedo teksturu
+
         shader->set_bool("hasDiffuseTexture", true);
 
         shader->set_vec3(
@@ -247,7 +246,7 @@ public:
 
         table->draw(shader);
 
-        // Sledeci objekti trenutno nemaju diffuse teksturu
+
         shader->set_bool("hasDiffuseTexture", false);
 
         glm::mat4 projector_model = glm::mat4(1.0f);
@@ -290,7 +289,7 @@ public:
 
         lamp->draw(shader);
 
-        // Sledeći objekti nemaju diffuse teksturu
+
         shader->set_bool("hasDiffuseTexture", false);
     }
 
